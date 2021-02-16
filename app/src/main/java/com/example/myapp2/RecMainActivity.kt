@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.E
 
 class RecMainActivity : AppCompatActivity(),ExampleAdapter.OnItemClickListener {
     private val list = ArrayList<ExampleItem>()
@@ -37,7 +38,7 @@ class RecMainActivity : AppCompatActivity(),ExampleAdapter.OnItemClickListener {
         list.add(ExampleItem(R.drawable.ic_baseline_airplanemode_active_24, "Airoplane Mode"))
         list.add(ExampleItem(R.drawable.ic_baseline_apps_24, "Apps"))
         list.add(ExampleItem(R.drawable.ic_baseline_battery_charging_full_24, "Battey"))
-        list.add(ExampleItem(R.drawable.ic_baseline_bluetooth_24, "Blutooth"))
+        list.add(ExampleItem(R.drawable.ic_baseline_bluetooth_24, "Bluetooth"))
         list.add(ExampleItem(R.drawable.ic_baseline_brightness_5_24, "Brightness"))
         list.add(ExampleItem(R.drawable.ic_baseline_calculate_24, "Calculator"))
         list.add(ExampleItem(R.drawable.ic_baseline_wallpaper, "Wallpaper"))
@@ -51,7 +52,8 @@ class RecMainActivity : AppCompatActivity(),ExampleAdapter.OnItemClickListener {
         list.add(ExampleItem(R.drawable.ic_baseline_devices_other_24, "Other Devices"))
         list.add(ExampleItem(R.drawable.ic_baseline_language_24, "Languages"))
         list.add(ExampleItem(R.drawable.ic_baseline_folder_24, "Folder"))
-        list.add(ExampleItem(R.drawable.ic_baseline_highlight_24, "Flash"))
+        list.add(ExampleItem(R.drawable.ic_baseline_highlight_24, "Torch"))
+        list.add(ExampleItem(R.drawable.ic_baseline_vibration,"Vibrate"))
     }
 
     override fun onItemClick(position: Int) {
@@ -62,6 +64,19 @@ class RecMainActivity : AppCompatActivity(),ExampleAdapter.OnItemClickListener {
             val intent = Intent(this, WiFiMain::class.java)
             startActivity(intent)
         }
+        if (list[position].text=="Bluetooth"){
+            val intent = Intent(this, BluetoothMain::class.java)
+            startActivity(intent)
+        }
+        if(list[position].text=="Camera"){
+            val intent = Intent(this, CameraMain::class.java)
+            startActivity(intent)
+        }
+        if (list[position].text=="Vibrate"){
+            val intent = Intent(this, VibrationMain::class.java)
+            startActivity(intent)
+        }
+
     }
 }
 
