@@ -13,6 +13,7 @@ class ActivityA : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
             Log.v(TAG, "onCreate()")
+
             setContentView(R.layout.activity_a)
 
             button4.setOnClickListener{
